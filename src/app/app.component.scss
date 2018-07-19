@@ -1,6 +1,5 @@
-.construction-page {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+$app-safe-boundaries: 20px;
+
+.safe-boundaries {
+  padding: $app-safe-boundaries;
 }

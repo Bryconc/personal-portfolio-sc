@@ -1,0 +1,14 @@
+@import "~src/sass/mixins";
+
+.home__feature-panel-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home__feature-panel-container app-home-feature-panel {
+  display: block;
+  flex: 0 50%;
+  @include mobile {
+    flex: 100%;
+  }
+}

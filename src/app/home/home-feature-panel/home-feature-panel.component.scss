@@ -1,0 +1,12 @@
+.feature-panel {
+  height: 200px;
+  margin: 10px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-panel--bordered {
+  border: 1px solid black;
+}

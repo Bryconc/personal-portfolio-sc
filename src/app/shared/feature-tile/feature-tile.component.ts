@@ -6,16 +6,25 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./feature-tile.component.scss']
 })
 export class FeatureTileComponent implements OnInit {
-
+  /**
+   * The title for the feature tile. This title will be displayed prominently in the tile.
+   *
+   * @type {string}
+   * @memberof FeatureTileComponent
+   */
   @Input()
   public title: string;
 
+  /**
+   * The optional link for the tile. This will be the router link used for clicking the tile.
+   *
+   * @type {string}
+   * @memberof FeatureTileComponent
+   */
   @Input()
-  public panelLink: string;
+  public tileLink: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

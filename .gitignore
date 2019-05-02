@@ -1,24 +1,46 @@
-# Outputs
-bazel-*
-test-project-host-*
-dist/
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# IDEs
-.idea/
-jsconfig.json
-.vscode/
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
 
-# Typings file.
-typings/
+# dependencies
+/node_modules
 
-# Misc
-coverage/
-node_modules/
-tmp/
-npm-debug.log*
-yarn-error.log*
-.ng_pkg_build/
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
 
-# Mac OSX Finder files.
-**/.DS_Store
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
 .DS_Store
+Thumbs.db

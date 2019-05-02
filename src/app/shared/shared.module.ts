@@ -10,7 +10,8 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
-    FeatureTileComponent
+    FeatureTileComponent,
+    RouterModule
   ]
 })
 export class SharedModule { }

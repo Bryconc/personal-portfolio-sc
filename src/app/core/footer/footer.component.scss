@@ -1,0 +1,33 @@
+@import '~src/sass/mixins';
+
+.contact-me__menu {
+    font-size: 60px;
+    text-align: center;
+
+    display: flex;
+    margin-top: 10px;
+
+    @include mobile {
+        font-size: 45px;
+    }
+}
+
+.contact-me__menu-item {
+    flex-basis: 33%;
+}
+
+.contact-me__menu-item a,
+.resume__icon {
+    color: black;
+}
+
+.resume__text {
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.resume__icon {
+    padding: 0px 20px;
+    font-size: 30px;
+}

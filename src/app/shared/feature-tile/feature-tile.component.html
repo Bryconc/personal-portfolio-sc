@@ -1,9 +1,9 @@
-<a *ngIf="panelLink != null"
+<a *ngIf="tileLink != null"
   class="feature-panel feature-panel--bordered"
-  [routerLink]="panelLink">
+  [routerLink]="tileLink">
   <h2 class="feature-panel__text"> {{title}}</h2>
 </a>
-<div *ngIf="panelLink == null"
+<div *ngIf="tileLink == null"
   class="feature-panel feature-panel--bordered">
   <h2 class="feature-panel__text"> {{title}}</h2>
 </div>

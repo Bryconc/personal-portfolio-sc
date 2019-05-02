@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+  links: {
+    linkedIn: 'https://linkedin.com/in/bryconc'
+  }
 };

@@ -1,0 +1,24 @@
+<footer>
+  <h1 class="main-header main-header--centered">
+    Contact Me
+  </h1>
+  <section class="contact-me__menu">
+    <div class="contact-me__menu-item">
+      <a [href]="environment.links.linkedIn">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+    <div class="contact-me__menu-item">
+      <a href="mailto:{{ environment.links.email }}">
+        <i class="far fa-envelope"></i>
+      </a>
+    </div>
+    <div class="contact-me__menu-item">
+      <a href="https://github.com/bryconc"><i class="fab fa-github"></i></a>
+    </div>
+  </section>
+
+  <p class="resume__text text--centered">
+    Download my resume: <a [href]="environment.links.resume"><i class="resume__icon far fa-file-pdf"></i></a>
+  </p>
+</footer>

@@ -1,4 +1,7 @@
-@import "~src/sass/mixins";
+@import '~src/sass/mixins';
+
+$home-profile-picture-size: 300px;
+$home-profile-picture-size-mobile: 200px;
 
 .home__feature-panel-container {
   display: flex;
@@ -10,5 +13,15 @@
   flex: 0 50%;
   @include mobile {
     flex: 100%;
+  }
+}
+
+.home__profile-picture {
+  height: $home-profile-picture-size;
+  width: $home-profile-picture-size;
+
+  @include mobile {
+    height: $home-profile-picture-size-mobile;
+    width: $home-profile-picture-size-mobile;
   }
 }

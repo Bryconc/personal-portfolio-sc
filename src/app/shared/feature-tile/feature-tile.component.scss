@@ -1,3 +1,9 @@
+$feature-panel-primary-color: #002342;
+$feature-panel-highlight-color: adjust-hue(
+  $color: $feature-panel-primary-color,
+  $degrees: -10
+);
+
 .feature-panel {
   height: 200px;
   margin: 10px;
@@ -6,7 +12,14 @@
   justify-content: center;
   align-items: center;
 
-  color: black;
+  color: white;
+
+  background-color: $feature-panel-primary-color;
+  background-image: url('~/assets/background/3px-tile.png');
+}
+
+.feature-panel:hover {
+  background-color: $feature-panel-highlight-color;
 }
 
 .feature-panel--bordered {

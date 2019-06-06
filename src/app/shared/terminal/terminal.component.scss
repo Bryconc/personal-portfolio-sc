@@ -1,0 +1,33 @@
+$terminal_header_color: #cccccc;
+$terminal_body_color: #383737;
+$terminal_font: Arial, monospace;
+
+.terminal {
+  font-family: $terminal_font;
+}
+
+.terminal__header {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: $terminal_header_color;
+
+  text-align: center;
+}
+
+.terminal__body {
+  background-color: $terminal_body_color;
+
+  color: white;
+}
+
+.terminal__command {
+  padding: 10px;
+}
+
+.terminal__command-text {
+  margin: 5px;
+}
+
+.terminal__command-text--indented {
+  padding-left: 10px;
+}

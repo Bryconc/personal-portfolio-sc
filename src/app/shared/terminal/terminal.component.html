@@ -1,0 +1,14 @@
+<div class="terminal">
+  <div class="terminal__header">
+    @Brycon_Carpenter
+  </div>
+
+  <div class="terminal__body">
+    <div class="terminal__command" *ngFor="let command of terminalContent">
+      <div class="terminal__command-text">% {{ command.command }}</div>
+      <div class="terminal__command-text terminal__command-text--indented">
+        {{ command.output }}
+      </div>
+    </div>
+  </div>
+</div>

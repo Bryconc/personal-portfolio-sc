@@ -1,0 +1,31 @@
+@import '~src/sass/mixins';
+
+.about__terminal-container {
+  display: flex;
+
+  @include mobile {
+    display: block;
+  }
+}
+
+.about__terminal {
+  flex: 2;
+  margin: auto;
+}
+
+.about__picture {
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__picture img {
+  height: 450px;
+  margin: 10px;
+
+  @include mobile {
+    height: 300px;
+  }
+}

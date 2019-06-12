@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "pages": "ng build --prod --base-href \"http://www.bryconcarpenter.com/personal-portfolio-sc/\" && npx ngh --dir=dist/personal-portfolio-sc",
+    "pages": "ng build --prod --base-href \"https://www.bryconcarpenter.com\" && npx ngh --dir=dist/personal-portfolio-sc",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

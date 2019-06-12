@@ -1,3 +1,5 @@
+@import 'mixins';
+
 $terminal_header_color: #cccccc;
 $terminal_body_color: #383737;
 $terminal_font: Arial, monospace;
@@ -16,8 +18,12 @@ $terminal_font: Arial, monospace;
 
 .terminal__body {
   background-color: $terminal_body_color;
-
   color: white;
+
+  @include mobile {
+    max-height: 250px;
+  }
+  overflow-y: scroll;
 }
 
 .terminal__command {
@@ -30,4 +36,23 @@ $terminal_font: Arial, monospace;
 
 .terminal__command-text--indented {
   padding-left: 10px;
+}
+
+.terminal__cursor::after {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 20px;
+  background-color: white;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: white;
+  }
 }

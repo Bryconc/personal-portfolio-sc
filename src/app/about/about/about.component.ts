@@ -24,17 +24,5 @@ export class AboutComponent implements OnInit {
     this.name = 'BryconC';
   }
 
-  ngOnInit() {
-    this.addBirthday();
-  }
-
-  private addBirthday() {
-    const birthday = new Date(environment.birthday).getTime();
-    const today = new Date().getTime();
-    const diffTime = today - birthday;
-    const diffDate = new Date(diffTime);
-    const age = Math.abs(diffDate.getUTCFullYear() - 1970);
-
-    this.commands.push({ command: `${this.name}.age`, output: `${age}` });
-  }
+  ngOnInit() {}
 }

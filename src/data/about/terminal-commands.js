@@ -13,7 +13,7 @@ export const commands = [
     output: 'Bachelor of Science in Computer Science'
   },
   {
-    command: 'BryconC.graduation',
+    command: 'BryconC.graduated',
     output: 'May 2017'
   }
 ];

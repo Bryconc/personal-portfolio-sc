@@ -1,6 +1,5 @@
 export const environment = {
   production: true,
-  birthday: '1994-12-31T12:00:00.000Z',
   links: {
     linkedIn: 'https://linkedin.com/in/bryconc',
     email: 'bryconc@gmail.com',

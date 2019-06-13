@@ -133,4 +133,61 @@
       </div>
     </div>
   </section>
+  <section class="resume_section">
+    <h2>Skills and Qualifications</h2>
+    <p>
+      <em
+        >These items are provided in alphabetical order and do not indicate
+        preference or skill level except where categorized.</em
+      >
+    </p>
+    <div class="resume_section-content resume_section-content--3-column">
+      <div>
+        <h3>Languages</h3>
+        <h4>Proficient with:</h4>
+        <ul class="unbulleted-list">
+          <li *ngFor="let lang of resumeData.languages.proficient">
+            {{ lang }}
+          </li>
+        </ul>
+        <h4>Familar with:</h4>
+        <ul class="unbulleted-list">
+          <li *ngFor="let lang of resumeData.languages.familar">
+            {{ lang }}
+          </li>
+        </ul>
+        <h4>Previously used:</h4>
+        <ul class="unbulleted-list">
+          <li *ngFor="let lang of resumeData.languages.previouslyUsed">
+            {{ lang }}
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Frameworks</h3>
+        <ul class="unbulleted-list">
+          <li *ngFor="let framework of resumeData.frameworks">
+            {{ framework }}
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Technologies</h3>
+        <ul class="unbulleted-list">
+          <li *ngFor="let technology of resumeData.technologies">
+            {{ technology }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="resume_section">
+    <h2>Projects</h2>
+    <p class="text--centered">
+      Please visit my <a routerLink="/projects">projects page</a> to learn more
+      about my projects.
+    </p>
+  </section>
 </article>

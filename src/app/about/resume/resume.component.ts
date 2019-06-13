@@ -21,5 +21,11 @@ export class ResumeComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.resumeData.frameworks.sort();
+    this.resumeData.technologies.sort();
+    this.resumeData.languages.proficient.sort();
+    this.resumeData.languages.familar.sort();
+    this.resumeData.languages.previouslyUsed.sort();
+  }
 }

@@ -24,7 +24,25 @@ export class FeatureTileComponent implements OnInit {
   @Input()
   public tileLink: string;
 
+  /**
+   * The optional link for the background of the feature tile. If no image link is provided,
+   * a default background will be used.
+   *
+   * @type {string}
+   * @memberof FeatureTileComponent
+   */
+  @Input()
+  public imageLink: string;
+
+  public useDefaultImage: boolean;
+
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.useDefaultImage = this.imageLink === undefined;
+
+    if (this.useDefaultImage) {
+      this.imageLink = 'assets/background/3px-tile.png';
+    }
+  }
 }

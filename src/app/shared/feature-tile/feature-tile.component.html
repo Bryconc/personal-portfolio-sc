@@ -1,9 +1,21 @@
-<a *ngIf="tileLink != null"
-  class="feature-panel feature-panel--bordered"
-  [routerLink]="tileLink">
-  <h2 class="feature-panel__text"> {{title}}</h2>
+<a
+  *ngIf="tileLink != null"
+  class="feature-panel"
+  [routerLink]="tileLink"
+  [style.backgroundImage]="'url(' + imageLink + ')'"
+  [ngClass]="{ 'feature-panel--image': !useDefaultImage }"
+>
+  <div class="feature-panel__text">
+    <h2>{{ title }}</h2>
+  </div>
 </a>
-<div *ngIf="tileLink == null"
-  class="feature-panel feature-panel--bordered">
-  <h2 class="feature-panel__text"> {{title}}</h2>
+<div
+  *ngIf="tileLink == null"
+  class="feature-panel"
+  [style.backgroundImage]="'url(' + imageLink + ')'"
+  [ngClass]="{ 'feature-panel--image': !useDefaultImage }"
+>
+  <div class="feature-panel__text">
+    <h2>{{ title }}</h2>
+  </div>
 </div>

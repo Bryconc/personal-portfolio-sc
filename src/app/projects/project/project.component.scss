@@ -1,0 +1,14 @@
+.project__header {
+  display: flex;
+}
+
+.project__header h1,
+.project__header i {
+  flex: 1;
+  line-height: 48px;
+  font-size: 32px;
+}
+
+.project__header i {
+  margin-left: auto;
+}

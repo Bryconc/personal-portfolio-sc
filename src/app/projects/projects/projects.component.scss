@@ -1,0 +1,14 @@
+@import 'mixins';
+
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.projects__tile {
+  flex: 0 0 33%;
+
+  @include mobile {
+    flex: 0 0 100%;
+  }
+}

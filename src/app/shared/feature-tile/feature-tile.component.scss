@@ -5,23 +5,50 @@ $feature-panel-highlight-color: adjust-hue(
 );
 
 .feature-panel {
+  display: block;
   height: 200px;
   margin: 10px;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   color: white;
-
   background-color: $feature-panel-primary-color;
-  background-image: url('~/assets/background/3px-tile.png');
+}
+
+.feature-panel__text {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.feature-panel--image .feature-panel__text {
+  visibility: hidden;
+
+  background-color: $feature-panel-highlight-color;
+  opacity: 0.9;
+}
+
+.feature-panel--image .feature-panel__text h2 {
+  opacity: 1;
+}
+
+.feature-panel--image:hover .feature-panel__text {
+  visibility: visible;
+}
+
+.feature-panel--image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
 }
 
 .feature-panel:hover {
   background-color: $feature-panel-highlight-color;
 }
 
-.feature-panel--bordered {
-  border: 1px solid black;
+.feature-panel--image:hover {
+  background-color: transparent;
 }

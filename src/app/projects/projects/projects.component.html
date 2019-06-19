@@ -1,0 +1,20 @@
+<h1 class="main-header main-header--centered">
+  Projects
+</h1>
+
+<p class="text--centered">
+  Here you can more about my past projects that have been done outside of
+  professional work. For more a more comprehensive resume (including my
+  professional work), please see my
+  <a routerLink="/about">about page</a>.
+</p>
+
+<div class="projects">
+  <app-feature-tile
+    class="projects__tile"
+    [title]="project.name"
+    [imageLink]="project.imageLink"
+    [tileLink]="getProjectLink(project)"
+    *ngFor="let project of projects"
+  ></app-feature-tile>
+</div>

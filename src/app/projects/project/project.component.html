@@ -1,0 +1,14 @@
+<div class="project__header">
+  <h1 class="main-header main-header--centered">
+    {{ project.name }}
+  </h1>
+  <a *ngIf="project.githubLink" [href]="project.githubLink" target="_blank"
+    ><i class="fab fa-github"></i
+  ></a>
+</div>
+
+<p class="text--centered" *ngIf="project.description">
+  {{ project.description }}
+</p>
+
+<article class="project__body" [innerHTML]="summary"></article>

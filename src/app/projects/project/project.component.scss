@@ -1,0 +1,27 @@
+@import 'mixins';
+
+.project__header {
+  display: flex;
+}
+
+.project__header h1,
+.project__header i {
+  flex: 1;
+  line-height: 48px;
+  font-size: 32px;
+}
+
+.project__header i {
+  margin-left: auto;
+}
+
+.project__body img {
+  max-width: 800px;
+  max-height: 800px;
+  display: block;
+
+  @include mobile {
+    max-width: 300px;
+    max-height: 300px;
+  }
+}

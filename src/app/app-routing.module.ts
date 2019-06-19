@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home/home.component';
 import { AboutComponent } from './about/about/about.component';
+import { ProjectsComponent } from './projects/projects/projects.component';
 
 const appRoutes: Routes = [
   { path: 'about', component: AboutComponent },

@@ -5,8 +5,8 @@ const getProject = projectID => {
 
 export const projects = [
   getProject('spotify-sampler'),
-  getProject('last-quest'),
-  getProject('caption-my-image'),
+  getProject('social-ja'),
   getProject('team-sunergy'),
-  getProject('social-ja')
+  getProject('caption-my-image'),
+  getProject('last-quest')
 ];

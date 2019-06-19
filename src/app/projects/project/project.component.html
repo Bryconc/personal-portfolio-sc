@@ -10,3 +10,5 @@
 <p class="text--centered" *ngIf="project.description">
   {{ project.description }}
 </p>
+
+<article class="project__body" [innerHTML]="summary"></article>

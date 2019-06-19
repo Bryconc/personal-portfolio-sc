@@ -1,16 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Project } from '../shared/project.interface';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { CrossOriginHttpClientService } from 'src/app/shared/http/cross-origin-http-client.service';
+
+const marked = require('marked/marked.min.js');
 
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.scss']
+  styleUrls: ['./project.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ProjectComponent implements OnInit {
   public project: Project;
+  public summary: string;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private httpClient: CrossOriginHttpClientService
+  ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe((params: ParamMap) => {
@@ -20,9 +28,20 @@ export class ProjectComponent implements OnInit {
   }
 
   private loadProject(projectID: string) {
-    console.log(`Loading project ${projectID}`);
     const { project } = require(`src/data/projects/project/${projectID}`);
     this.project = project;
-    console.log(this.project);
+    this.getGitHubReadme();
+  }
+
+  private getGitHubReadme() {
+    const readMeURL = `${this.project.githubLink}/raw/master/README.md`;
+    this.httpClient.getText(readMeURL).subscribe(
+      data => {
+        this.summary = marked(data);
+      },
+      error => {
+        this.summary = '';
+      }
+    );
   }
 }

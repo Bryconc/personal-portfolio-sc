@@ -30,7 +30,11 @@ export class ProjectComponent implements OnInit {
   private loadProject(projectID: string) {
     const { project } = require(`src/data/projects/project/${projectID}`);
     this.project = project;
-    this.getGitHubReadme();
+    if (this.project.githubLink) {
+      this.getGitHubReadme();
+    } else {
+      this.summary = this.project.summary;
+    }
   }
 
   private getGitHubReadme() {
@@ -39,7 +43,7 @@ export class ProjectComponent implements OnInit {
       data => {
         this.summary = marked(data);
       },
-      error => {
+      _ => {
         this.summary = '';
       }
     );

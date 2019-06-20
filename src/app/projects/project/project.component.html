@@ -12,3 +12,9 @@
 </p>
 
 <article class="project__body" [innerHTML]="summary"></article>
+<p *ngIf="project.githubLink">
+  <em
+    >The above summary was generated from the project's
+    <a [href]="project.githubLink" target="_blank">README on GitHub</a>.</em
+  >
+</p>

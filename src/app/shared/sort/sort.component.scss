@@ -1,0 +1,25 @@
+.sort-icon__top-triangle {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid black;
+}
+
+.sort-icon__space {
+  height: 2px;
+}
+
+.sort-icon__bottom-triangle {
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  margin: 0 auto;
+
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid black;
+}

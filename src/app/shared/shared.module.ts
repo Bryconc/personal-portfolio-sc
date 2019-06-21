@@ -1,12 +1,14 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FeatureTileComponent } from './feature-tile/feature-tile.component';
+import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+
+import { FeatureTileComponent } from './feature-tile/feature-tile.component';
+import { SortComponent } from './sort/sort.component';
 import { TerminalComponent } from './terminal/terminal.component';
-import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [FeatureTileComponent, TerminalComponent],
+  declarations: [FeatureTileComponent, TerminalComponent, SortComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -16,6 +18,7 @@ import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
   exports: [
     FeatureTileComponent,
     TerminalComponent,
+    SortComponent,
     RouterModule,
     HttpClientModule,
     HttpClientJsonpModule

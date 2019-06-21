@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { positions } from 'src/data/positions/positions';
 import { Position } from '../shared/position.interface';
+import { SortOrder } from 'src/app/shared/sort/sort.component';
 
 const monthNames = [
   'January',
@@ -37,6 +38,29 @@ export class PositionsComponent implements OnInit {
       )}`;
     }
     return str;
+  }
+
+  public sortPositions(order: SortOrder, index: string) {
+    positions.sort((a: Position, b: Position) => {
+      return this.comparePosition(a, b, index, order);
+    });
+  }
+
+  private comparePosition(
+    a: Position,
+    b: Position,
+    index: string,
+    order: SortOrder
+  ): number {
+    const multiplier = order === SortOrder.ASC ? 1 : -1;
+    switch (index) {
+      case 'beginDate':
+        return multiplier * (a[index].getTime() - b[index].getTime());
+      case 'position':
+      case 'company':
+      default:
+        return multiplier * a[index].localeCompare(b[index]);
+    }
   }
 
   private getDateStr(date: Date): string {

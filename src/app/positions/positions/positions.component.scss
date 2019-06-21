@@ -1,23 +1,14 @@
 @import 'mixins';
 
 .positions {
-  border-collapse: collapse;
+  width: 100%;
 }
 
 .position {
-  display: flex;
-
   border: 1px solid black;
-  border-bottom: none;
-  border-collapse: collapse;
-}
-
-.position:last-child {
-  border-bottom: 1px solid black;
 }
 
 .position__column {
-  flex: 0 0 33%;
   padding: 10px;
 
   text-align: center;
@@ -27,5 +18,6 @@
   }
 }
 
-.position__column--header {
+th app-sort {
+  display: inline-block;
 }

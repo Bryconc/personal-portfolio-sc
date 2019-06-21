@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { AboutModule } from './about/about.module';
 import { ProjectsModule } from './projects/projects.module';
+import { PositionsModule } from './positions/positions.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,6 +16,7 @@ import { ProjectsModule } from './projects/projects.module';
     HomeModule,
     AboutModule,
     ProjectsModule,
+    PositionsModule,
     CoreModule,
     SharedModule,
     BrowserModule,

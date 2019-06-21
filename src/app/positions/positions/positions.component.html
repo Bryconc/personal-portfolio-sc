@@ -1,0 +1,35 @@
+<h1 class="main-header main-header--centered">
+  Positions
+</h1>
+
+<p class="text--centered">
+  Here you can learn more about the positions I've held in my career. I will go
+  into detail about different projects I've done on the job. For a more consise
+  resume (including my professional work), please see my
+  <a routerLink="/about">about page</a>.
+</p>
+
+<div class="positions">
+  <div class="position">
+    <div class="position__column position__column--header">
+      <h3>Position</h3>
+    </div>
+    <div class="position__column position__column--header">
+      <h3>Company</h3>
+    </div>
+    <div class="position__column position__column--header">
+      <h3>Dates</h3>
+    </div>
+  </div>
+  <div class="position" *ngFor="let position of positions">
+    <div class="position__column">
+      <p>{{ position.position }}</p>
+    </div>
+    <div class="position__column">
+      <p>{{ position.company }}</p>
+    </div>
+    <div class="position__column">
+      <p>{{ getDateRange(position) }}</p>
+    </div>
+  </div>
+</div>

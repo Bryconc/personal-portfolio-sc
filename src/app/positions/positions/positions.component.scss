@@ -1,0 +1,31 @@
+@import 'mixins';
+
+.positions {
+  border-collapse: collapse;
+}
+
+.position {
+  display: flex;
+
+  border: 1px solid black;
+  border-bottom: none;
+  border-collapse: collapse;
+}
+
+.position:last-child {
+  border-bottom: 1px solid black;
+}
+
+.position__column {
+  flex: 0 0 33%;
+  padding: 10px;
+
+  text-align: center;
+
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
+.position__column--header {
+}

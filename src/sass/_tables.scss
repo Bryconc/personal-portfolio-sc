@@ -1,6 +1,25 @@
 $table-cell-hover-color: #dcdcdc;
+$table-cell-background-color: #f0f0f0;
+$table-border-color: #bfbfbf;
+
+table {
+  border: 1px solid $table-border-color;
+}
+
+thead {
+  border-bottom: 1px solid $table-border-color;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: $table-cell-background-color;
+}
 
 th:hover {
+  cursor: pointer;
+  background-color: $table-cell-hover-color;
+}
+
+tbody tr:hover {
   cursor: pointer;
   background-color: $table-cell-hover-color;
 }

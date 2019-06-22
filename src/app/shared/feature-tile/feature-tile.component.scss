@@ -1,8 +1,4 @@
-$feature-panel-primary-color: #002342;
-$feature-panel-highlight-color: adjust-hue(
-  $color: $feature-panel-primary-color,
-  $degrees: -10
-);
+@import 'color';
 
 .feature-panel {
   display: block;
@@ -10,7 +6,7 @@ $feature-panel-highlight-color: adjust-hue(
   margin: 10px;
 
   color: white;
-  background-color: $feature-panel-primary-color;
+  background-color: $color-primary;
 }
 
 .feature-panel__text {
@@ -26,7 +22,7 @@ $feature-panel-highlight-color: adjust-hue(
 .feature-panel--image .feature-panel__text {
   visibility: hidden;
 
-  background-color: $feature-panel-highlight-color;
+  background-color: $color-accent;
   opacity: 0.9;
 }
 
@@ -46,7 +42,7 @@ $feature-panel-highlight-color: adjust-hue(
 }
 
 .feature-panel:hover {
-  background-color: $feature-panel-highlight-color;
+  background-color: $color-accent;
 }
 
 .feature-panel--image:hover {

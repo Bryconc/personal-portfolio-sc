@@ -1,9 +1,11 @@
+@import 'color';
+
 .sort-icon__top-triangle.sort-icon--active {
-  border-bottom-color: aqua;
+  border-bottom-color: $color-highlight;
 }
 
 .sort-icon__bottom-triangle.sort-icon--active {
-  border-top-color: aqua;
+  border-top-color: $color-highlight;
 }
 
 .sort-icon__top-triangle {

@@ -1,0 +1,7 @@
+$color-primary: #002342;
+$color-accent: adjust-hue(
+  $color: $color-primary,
+  $degrees: -10
+);
+
+$color-highlight: #44abff;

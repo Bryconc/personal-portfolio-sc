@@ -4,10 +4,6 @@
   width: 100%;
 }
 
-.sortable-table__row {
-  border: 1px solid black;
-}
-
 .sortable-table__entry {
   padding: 10px;
 
@@ -19,5 +15,6 @@
 }
 
 th app-sort {
+  margin-left: 5px;
   display: inline-block;
 }

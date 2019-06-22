@@ -29,15 +29,15 @@ export class PositionsComponent implements OnInit, TableDataSource<Position> {
   public fields = [
     {
       name: 'position',
-      display: 'Position'
+      display: 'POSITION'
     },
     {
       name: 'company',
-      display: 'Company'
+      display: 'COMPANY'
     },
     {
       name: 'dates',
-      display: 'Dates'
+      display: 'DATES'
     }
   ];
 

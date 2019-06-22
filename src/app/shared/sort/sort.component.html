@@ -1,5 +1,13 @@
 <div class="sort-icon">
-  <div class="sort-icon__top-triangle" (click)="sort(sortOrder.ASC)"></div>
+  <div
+    class="sort-icon__top-triangle"
+    [ngClass]="{ 'sort-icon--active': activeOrder === sortOrder.ASC && active }"
+  ></div>
   <div class="sort-icon__space"></div>
-  <div class="sort-icon__bottom-triangle" (click)="sort(sortOrder.DESC)"></div>
+  <div
+    class="sort-icon__bottom-triangle"
+    [ngClass]="{
+      'sort-icon--active': activeOrder === sortOrder.DESC && active
+    }"
+  ></div>
 </div>

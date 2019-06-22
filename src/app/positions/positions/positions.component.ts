@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { positions } from 'src/data/positions/positions';
 import { Position } from '../shared/position.interface';
 import { SortOrder } from 'src/app/shared/sort/sort.component';
+import { TableDataSource } from 'src/app/shared/sortable-table/table-data-source';
 
 const monthNames = [
   'January',
@@ -23,14 +24,50 @@ const monthNames = [
   templateUrl: './positions.component.html',
   styleUrls: ['./positions.component.scss']
 })
-export class PositionsComponent implements OnInit {
-  public positions: Position[] = positions;
+export class PositionsComponent implements OnInit, TableDataSource<Position> {
+  public data: Position[] = positions;
+  public fields = [
+    {
+      name: 'position',
+      display: 'Position'
+    },
+    {
+      name: 'company',
+      display: 'Company'
+    },
+    {
+      name: 'dates',
+      display: 'Dates'
+    }
+  ];
 
   constructor() {}
 
   ngOnInit() {}
 
-  public getDateRange(position: Position): string {
+  public getDataValue(data: Position, field: string): string {
+    switch (field) {
+      case 'dates':
+        return this.getDateRange(data);
+      case 'position':
+      case 'company':
+      default:
+        return data[field];
+    }
+  }
+
+  public compare(a: Position, b: Position, field: string): number {
+    switch (field) {
+      case 'dates':
+        return a.beginDate.getTime() - b.beginDate.getTime();
+      case 'position':
+      case 'company':
+      default:
+        return a[field].localeCompare(b[field]);
+    }
+  }
+
+  private getDateRange(position: Position): string {
     let str = '';
     if (position) {
       str = `${this.getDateStr(position.beginDate)} - ${this.getDateStr(
@@ -38,29 +75,6 @@ export class PositionsComponent implements OnInit {
       )}`;
     }
     return str;
-  }
-
-  public sortPositions(order: SortOrder, index: string) {
-    positions.sort((a: Position, b: Position) => {
-      return this.comparePosition(a, b, index, order);
-    });
-  }
-
-  private comparePosition(
-    a: Position,
-    b: Position,
-    index: string,
-    order: SortOrder
-  ): number {
-    const multiplier = order === SortOrder.ASC ? 1 : -1;
-    switch (index) {
-      case 'beginDate':
-        return multiplier * (a[index].getTime() - b[index].getTime());
-      case 'position':
-      case 'company':
-      default:
-        return multiplier * a[index].localeCompare(b[index]);
-    }
   }
 
   private getDateStr(date: Date): string {

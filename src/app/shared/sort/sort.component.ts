@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'app-sort',
@@ -8,18 +8,15 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 export class SortComponent implements OnInit {
   public sortOrder = SortOrder;
 
-  @Output()
-  public sorted: EventEmitter<SortOrder>;
+  @Input()
+  public active: boolean;
 
-  constructor() {
-    this.sorted = new EventEmitter();
-  }
+  @Input()
+  public activeOrder: SortOrder;
+
+  constructor() {}
 
   ngOnInit() {}
-
-  public sort(order: SortOrder) {
-    this.sorted.emit(order);
-  }
 }
 
 export enum SortOrder {

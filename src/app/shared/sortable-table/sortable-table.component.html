@@ -1,0 +1,24 @@
+<table class="sortable-table">
+  <thead>
+    <tr class="sortable-table__row">
+      <th
+        class="sortable-table__entry"
+        *ngFor="let field of dataSource.fields"
+        (click)="sort(field.name)"
+      >
+        {{ field.display
+        }}<app-sort
+          [active]="activeSort === field.name"
+          [activeOrder]="activeOrder"
+        ></app-sort>
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="sortable-table__row" *ngFor="let record of dataSource.data">
+      <td class="sortable-table__entry" *ngFor="let field of dataSource.fields">
+        {{ dataSource.getDataValue(record, field.name) }}
+      </td>
+    </tr>
+  </tbody>
+</table>

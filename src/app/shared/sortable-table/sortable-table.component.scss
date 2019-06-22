@@ -1,0 +1,23 @@
+@import 'mixins';
+
+.sortable-table {
+  width: 100%;
+}
+
+.sortable-table__row {
+  border: 1px solid black;
+}
+
+.sortable-table__entry {
+  padding: 10px;
+
+  text-align: center;
+
+  @include mobile {
+    font-size: 10px;
+  }
+}
+
+th app-sort {
+  display: inline-block;
+}

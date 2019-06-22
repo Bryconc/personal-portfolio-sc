@@ -1,0 +1,6 @@
+$table-cell-hover-color: #dcdcdc;
+
+th:hover {
+  cursor: pointer;
+  background-color: $table-cell-hover-color;
+}

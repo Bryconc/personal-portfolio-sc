@@ -1,5 +1,12 @@
+.sort-icon__top-triangle.sort-icon--active {
+  border-bottom-color: aqua;
+}
+
+.sort-icon__bottom-triangle.sort-icon--active {
+  border-top-color: aqua;
+}
+
 .sort-icon__top-triangle {
-  cursor: pointer;
   width: 0;
   height: 0;
   margin: 0 auto;
@@ -14,7 +21,6 @@
 }
 
 .sort-icon__bottom-triangle {
-  cursor: pointer;
   width: 0;
   height: 0;
   margin: 0 auto;

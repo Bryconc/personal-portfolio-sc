@@ -9,30 +9,4 @@
   <a routerLink="/about">about page</a>.
 </p>
 
-<table class="positions">
-  <thead>
-    <tr class="position">
-      <th class="position__column">
-        Position
-        <app-sort (sorted)="sortPositions($event, 'position')"></app-sort>
-      </th>
-      <th class="position__column">
-        Company
-        <app-sort (sorted)="sortPositions($event, 'company')"></app-sort>
-      </th>
-      <th class="position__column">
-        Dates
-        <app-sort (sorted)="sortPositions($event, 'beginDate')"></app-sort>
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="position" *ngFor="let position of positions">
-      <td class="position__column">{{ position.position }}</td>
-      <td class="position__column">
-        {{ position.company }}
-      </td>
-      <td class="position__column">{{ getDateRange(position) }}</td>
-    </tr>
-  </tbody>
-</table>
+<app-sortable-table [dataSource]="this"></app-sortable-table>

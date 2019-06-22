@@ -6,9 +6,15 @@ import { RouterModule } from '@angular/router';
 import { FeatureTileComponent } from './feature-tile/feature-tile.component';
 import { SortComponent } from './sort/sort.component';
 import { TerminalComponent } from './terminal/terminal.component';
+import { SortableTableComponent } from './sortable-table/sortable-table.component';
 
 @NgModule({
-  declarations: [FeatureTileComponent, TerminalComponent, SortComponent],
+  declarations: [
+    FeatureTileComponent,
+    TerminalComponent,
+    SortComponent,
+    SortableTableComponent
+  ],
   imports: [
     CommonModule,
     RouterModule,
@@ -19,6 +25,7 @@ import { TerminalComponent } from './terminal/terminal.component';
     FeatureTileComponent,
     TerminalComponent,
     SortComponent,
+    SortableTableComponent,
     RouterModule,
     HttpClientModule,
     HttpClientJsonpModule

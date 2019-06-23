@@ -21,7 +21,6 @@ export class PositionComponent implements OnInit {
   ngOnInit() {}
 
   public getDate(date: Date): string {
-    console.log(date);
     if (date === null) {
       return 'Present';
     }

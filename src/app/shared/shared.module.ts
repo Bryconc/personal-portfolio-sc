@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientJsonpModule, HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -29,6 +29,7 @@ import { SortableTableComponent } from './sortable-table/sortable-table.componen
     RouterModule,
     HttpClientModule,
     HttpClientJsonpModule
-  ]
+  ],
+  providers: [DatePipe]
 })
 export class SharedModule {}

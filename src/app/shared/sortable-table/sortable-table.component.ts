@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { TableDataSource } from './table-data-source';
 import { SortOrder } from '../sort/sort.component';
 
@@ -11,11 +11,16 @@ export class SortableTableComponent implements OnInit {
   @Input()
   public dataSource: TableDataSource<any>;
 
+  @Output()
+  public rowClick: EventEmitter<any>;
+
   public activeSort: string;
 
   public activeOrder: SortOrder;
 
-  constructor() {}
+  constructor() {
+    this.rowClick = new EventEmitter();
+  }
 
   ngOnInit() {}
 
@@ -26,6 +31,10 @@ export class SortableTableComponent implements OnInit {
       const multiplier = this.activeOrder === SortOrder.ASC ? 1 : -1;
       return multiplier * this.dataSource.compare(a, b, field);
     });
+  }
+
+  public rowClicked(event: any): void {
+    this.rowClick.emit(event);
   }
 
   private setSortOrder(field: string) {

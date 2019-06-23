@@ -9,4 +9,7 @@
   <a routerLink="/about">about page</a>.
 </p>
 
-<app-sortable-table [dataSource]="this"></app-sortable-table>
+<app-sortable-table
+  [dataSource]="this"
+  (rowClick)="positionClicked($event)"
+></app-sortable-table>

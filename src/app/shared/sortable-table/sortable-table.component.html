@@ -15,7 +15,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr class="sortable-table__row" *ngFor="let record of dataSource.data">
+    <tr
+      class="sortable-table__row"
+      *ngFor="let record of dataSource.data"
+      (click)="rowClicked(record)"
+    >
       <td class="sortable-table__entry" *ngFor="let field of dataSource.fields">
         {{ dataSource.getDataValue(record, field.name) }}
       </td>

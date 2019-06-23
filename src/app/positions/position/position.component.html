@@ -1,0 +1,27 @@
+<div class="position__header">
+  <h1 class="main-header main-header--centered">
+    {{ position.company }}
+  </h1>
+  <h2 class="main-header main-header--centered">
+    {{ position.position }}
+  </h2>
+
+  <img
+    class="postions__header-image"
+    [src]="position.companyImage"
+    alt="An image for {{ position.company }}"
+  />
+</div>
+
+<article class="position__body">
+  <dl>
+    <dt>Begin Date</dt>
+    <dd>
+      {{ getDate(position.beginDate) }}
+    </dd>
+    <dt>End Date</dt>
+    <dd>
+      {{ getDate(position.endDate) }}
+    </dd>
+  </dl>
+</article>

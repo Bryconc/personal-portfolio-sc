@@ -1,23 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { TableDataSource } from 'src/app/shared/sortable-table/table-data-source';
 import { positions } from 'src/data/positions/positions';
 import { Position } from '../shared/position.interface';
-import { SortOrder } from 'src/app/shared/sort/sort.component';
-import { TableDataSource } from 'src/app/shared/sortable-table/table-data-source';
-
-const monthNames = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December'
-];
+import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-positions',
@@ -41,7 +27,7 @@ export class PositionsComponent implements OnInit, TableDataSource<Position> {
     }
   ];
 
-  constructor() {}
+  constructor(private router: Router, private date: DatePipe) {}
 
   ngOnInit() {}
 
@@ -67,6 +53,10 @@ export class PositionsComponent implements OnInit, TableDataSource<Position> {
     }
   }
 
+  public positionClicked(position: Position): void {
+    this.router.navigate(['/position/', position.id]);
+  }
+
   private getDateRange(position: Position): string {
     let str = '';
     if (position) {
@@ -80,7 +70,7 @@ export class PositionsComponent implements OnInit, TableDataSource<Position> {
   private getDateStr(date: Date): string {
     let str = 'Present';
     if (date) {
-      str = `${monthNames[date.getMonth()]} ${date.getFullYear()}`;
+      str = this.date.transform(date, 'MMMM yyyy');
     }
 
     return str;

@@ -6,4 +6,5 @@ export interface Position {
   companyImage: string;
   beginDate: Date;
   endDate: Date;
+  primaryTechnologies: string[];
 }

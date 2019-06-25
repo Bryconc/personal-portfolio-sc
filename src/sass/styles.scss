@@ -3,3 +3,17 @@
 @import 'typography';
 @import 'layout';
 @import 'tables';
+@import 'color';
+
+.link--button {
+  border: 1px solid $color-primary;
+  border-radius: 10px;
+  padding: 10px;
+
+  color: $color-primary;
+}
+
+.link--button:hover {
+  color: $color-primary;
+  text-decoration: none;
+}

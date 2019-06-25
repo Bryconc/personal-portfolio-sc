@@ -1,3 +1,7 @@
+<nav class="position__return-nav">
+  <a class="link--button" routerLink="/positions">Back to Positions</a>
+</nav>
+
 <div class="position__header">
   <h1 class="main-header main-header--centered">
     {{ position.company }}
@@ -23,5 +27,13 @@
     <dd>
       {{ getDate(position.endDate) }}
     </dd>
+    <ng-container
+      *ngIf="
+        position.primaryTechnologies && position.primaryTechnologies.length > 0
+      "
+    >
+      <dt>Primary Technologies</dt>
+      <dd>{{ position.primaryTechnologies.join(', ') }}</dd>
+    </ng-container>
   </dl>
 </article>

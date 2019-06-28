@@ -7,4 +7,5 @@ export interface Position {
   beginDate: Date;
   endDate: Date;
   primaryTechnologies: string[];
+  summary: string;
 }
